@@ -169,6 +169,12 @@ def unitree_go2_rough_env_cfg(
     joint_pos_action = cfg.actions["joint_pos"]
     assert isinstance(joint_pos_action, JointPositionActionCfg)
     joint_pos_action.scale = GO2_ACTION_SCALE
+
+    twist_cmd = cfg.commands["twist"]
+    assert isinstance(twist_cmd, UniformVelocityCommandCfg)
+    twist_cmd.ranges.lin_vel_x = (-0.5, 0.8)
+    twist_cmd.ranges.lin_vel_y = (-0.2, 0.2)
+    twist_cmd.ranges.ang_vel_z = (-0.3, 0.3)
  
     cfg.viewer.body_name = "base_link"
     cfg.viewer.distance = 1.5
