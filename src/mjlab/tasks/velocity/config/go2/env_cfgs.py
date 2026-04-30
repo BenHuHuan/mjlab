@@ -168,7 +168,7 @@ def unitree_go2_rough_env_cfg(
 
     joint_pos_action = cfg.actions["joint_pos"]
     assert isinstance(joint_pos_action, JointPositionActionCfg)
-    joint_pos_action.scale = GO2_ACTION_SCALE
+    joint_pos_action.scale = 0.25
 
     cfg.viewer.body_name = "base_link"
     cfg.viewer.distance = 1.5
