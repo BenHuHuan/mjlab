@@ -213,6 +213,7 @@ def unitree_go2_rough_env_cfg(
     )
 
     cfg.events["base_com"].params["asset_cfg"].body_names = ("base_link",)
+    cfg.events.pop("push_robot", None)
 
     cfg.rewards["pose"].params["std_standing"] = {
            r".*(FR|FL|RR|RL)_(hip|thigh)_joint.*": 0.05,
