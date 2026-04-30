@@ -265,7 +265,7 @@ def unitree_go2_rough_env_cfg(
 
     cfg.terminations["illegal_contact"] = TerminationTermCfg(
            func=mdp.illegal_contact,
-           params={"sensor_name": thigh_ground_cfg.name, "force_threshold": 40.0},
+           params={"sensor_name": thigh_ground_cfg.name, "force_threshold": 80.0},
     )
 
       # Apply play mode overrides.
