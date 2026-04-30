@@ -44,6 +44,8 @@ def unitree_go2_rough_env_cfg(
     cfg.sim.contact_sensor_maxmatch= 500
 
     cfg.scene.entities ={"robot": get_go2_robot_cfg()}
+    if cfg.scene.terrain is not None:
+         cfg.scene.terrain.max_init_terrain_level = 1
     
     for sensor in cfg.scene.sensors or ():
         if sensor.name == "terrain_scan" :
@@ -263,7 +265,7 @@ def unitree_go2_rough_env_cfg(
 
     cfg.terminations["illegal_contact"] = TerminationTermCfg(
            func=mdp.illegal_contact,
-           params={"sensor_name": thigh_ground_cfg.name},
+           params={"sensor_name": thigh_ground_cfg.name, "force_threshold": 30.0},
     )
 
       # Apply play mode overrides.
