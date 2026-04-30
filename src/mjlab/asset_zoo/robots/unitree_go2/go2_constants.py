@@ -108,9 +108,10 @@ FEET_ONLY_COLLISION = CollisionCfg(
 # Foot collisions are given custom condim, friction and solimp.
 FULL_COLLISION = CollisionCfg(
   geom_names_expr=(".*_collision",),
-  condim={_foot_regex: 3, ".*_collision": 1},
+  solref=(0.01, 1),
+  condim={_foot_regex: 6, ".*_collision": 1},
   priority={_foot_regex: 1},
-  friction={_foot_regex: (0.6,)},
+  friction={_foot_regex: (1, 5e-3, 5e-4)},
   solimp={_foot_regex: (0.9, 0.95, 0.023)},
   contype=1,
   conaffinity=0,
